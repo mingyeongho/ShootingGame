@@ -21,22 +21,17 @@ public class MainController implements Initializable{
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		enterButton.setOnAction(event-> {
 			try {
-				Parent shooting = FXMLLoader.load(getClass().getResource("shootingScene.fxml"));
-				
-				Scene scene = new Scene(shooting);
-				
-				
-				Stage shootingStage = (Stage) enterButton.getScene().getWindow();
-				shootingStage.setScene(scene);
-				
+				Parent enter = FXMLLoader.load(getClass().getResource("shootingScene.fxml"));
+				Scene scene = new Scene(enter);
+				Stage primaryStage = (Stage) enterButton.getScene().getWindow();
+				primaryStage.setScene(scene);
 			} catch(Exception e) {
-				System.out.println("submitButton Exception");
+				System.out.println("enterButton Error");
 			}
 		});
 		
 		exitButton.setOnAction(event-> {
 			Platform.exit();
 		});
-		
 	}
 }
